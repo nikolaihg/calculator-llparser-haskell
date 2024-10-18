@@ -1,4 +1,4 @@
-module Oblig1 where
+module Main where
 
 import Data.Char
 
@@ -96,3 +96,6 @@ evalVar (BinOp Sub v h) varList = (evalVar v varList) - (evalVar h varList)
 evalVar (BinOp Mult v h) varList = (evalVar v varList) * (evalVar h varList)
 evalVar (BinOp Div v h) varList = (evalVar v varList) `div` (evalVar h varList)
 
+main = do 
+  input <- getLine
+  putStrLn (show (eval $ parse input))
